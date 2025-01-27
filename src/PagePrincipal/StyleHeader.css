@@ -1,0 +1,79 @@
+.Container_Header{
+    display: flex;
+    margin: 0%;
+    height: 100%;
+    background-color: beige;
+}
+
+
+.header{
+    display: flex;
+    width: 100%;
+}
+
+.logo_page{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.Container_header__imageLOGO {
+    display: flex;
+    width: 20%;
+    height: 70%;
+    filter: drop-shadow(5px 5px 5px black);
+    border: none;
+    animation: rotate 5s linear infinite; /* Nombre de la animación, duración, temporización, iteraciones */  
+}
+
+
+.title{
+    display: flex;
+    width: 40%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 100%;
+    background-color: red;
+}
+.editTitle{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 100%;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: bisque;
+}
+
+
+.Container_Header__modals{
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    gap: 20px;
+}
+
+.iconos{
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.Container_Header__buscar{
+    display: flex;
+    background-color: aqua;
+    width: 70%;
+    height: 40%;
+}
+
+
+
+
