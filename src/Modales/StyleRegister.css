@@ -1,0 +1,19 @@
+.container_register{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(192, 179, 179, 0.678);
+    justify-content: center;
+    align-items: center;
+}
+
+.input_register{
+    display: flex;
+    height: 60%;
+    width: 40%;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;  
+}
