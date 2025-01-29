@@ -3,11 +3,13 @@ import { BsFillPersonPlusFill } from "react-icons/bs";
 import { BsPersonRaisedHand } from "react-icons/bs";
 import { useState } from "react";
 import Register from "../Modales/Register";
+import Login from "../Modales/Login"
 import "./StyleHeader.css"
  
  export default function Header(){
 
-    const [registerModal, setRegisterModal]=useState([])
+    const [modal, setModal]=useState([])
+    
 
     return(
         <div className="Container_Header">
@@ -28,16 +30,15 @@ import "./StyleHeader.css"
 
           <div className="iconos">
           <BsFillPersonPlusFill  className="Container_Header__buscar" 
-          onClick={()=>setRegisterModal(<Register  closeModal={()=> setRegisterModal([])}/>)}/>
+          onClick={()=>setModal(<Register  closeModal={()=> setModal([])}/>)}/>
           </div>
 
           <div className="iconos">
-          <BsPersonRaisedHand className="Container_Header__buscar"
-          />
+          <BsPersonRaisedHand className="Container_Header__buscar" onClick={()=>setModal(<Login  closeModal={()=> setModal([])}/>)}/>
           </div>
 
         </div>
-        {registerModal}
+        {modal}
 
       </div>
       

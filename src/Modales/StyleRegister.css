@@ -28,7 +28,7 @@
     display: flex;
     width: 100%;
     height: 10%;
-    background-color:aqua ;
+
     justify-content: flex-end;
 
 }
@@ -93,9 +93,23 @@ background-color: red;
         .close{
             display: flex;
             width: 100%;
-            height: 30%;
-            background-color:aqua ;
+            height: 5%;
             justify-content: flex-end;
+        
+        }
+
+        .input_register{
+            display: flex;
+            height: 50%;
+            width: 65%;
+            background-color:white;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 5px;
+            border-style: groove;
+            border-color: gray;
+            box-shadow: 5px 5px 5px black;
+            filter: drop-shadow(20px 5px 10px black) ;
         
         }
         
