@@ -1,0 +1,37 @@
+
+
+.login{
+    display: flex;
+    height: 100%;
+    gap: 10px;
+    padding: 10px;
+}
+
+.img_login{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    
+}
+
+.img_log{
+    height: 100%;
+    width: 100%;
+}
+
+.input_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+}
+
+.login_inp{
+    display: flex;
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+}
