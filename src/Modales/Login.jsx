@@ -1,8 +1,12 @@
 import { useState } from "react"
 import "./StyleLogin.css"
+import { useNavigate } from "react-router"
+
 
 
 export default function Login({closeModal}){
+
+    const navigate=useNavigate()
 
     const [information, setInformation]=useState({
         name: "",
@@ -26,6 +30,7 @@ export default function Login({closeModal}){
             return "No pueden haber espacios"
         }
         alert(`tus datos son ${information.email} y ${information.name}`)
+        navigate("/LoginSession")
     }
 
  

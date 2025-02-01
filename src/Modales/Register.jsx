@@ -4,15 +4,53 @@ import "./StyleRegister.css"
 export default function Register({ closeModal }){
 
     const [dates, setDates]=useState({
-        nombre: '',
+        name: '',
         email: '',
         password: '',
         confirmPassword: ''
     })
 
-    const getData =(e)=>{
-        console.log(dates)
+    const handleChange =(e)=>{
+        const {name,value}=e.target
+        setDates({
+            ...dates,
+            [name]:value
+        })
     }
+
+
+    const handleSubmit=()=>{
+        if(dates.password="" || dates.confirmPassword== "" || dates.email== "" || dates.name== ""){
+            return  alert("No field can be empty")
+        }
+
+        if(dates.email.trim()== "" || dates.name.trim()== ""){
+            return  alert("You can't leave space")
+        }
+
+
+        if(dates.password != dates.confirmPassword){
+            return alert("Passwords do not match")
+        }
+
+        if (!validatePassword(dates.password)) {
+            return alert("Password must be at least 8 characters long and contain uppercase, lowercase, a number, and a special character.");
+          }
+
+
+        return alert("SUCCESSFUL RECORD")
+    }
+
+    // validaciones agregadas
+    const validatePassword = (password) => {
+        const minLength = 8;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumber = /\d/.test(password);
+        const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    
+        return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar;
+      };
 
 
     return(
@@ -31,18 +69,18 @@ export default function Register({ closeModal }){
 
                     <div className="form">
                     <label htmlFor="title" className="label_modal">Username</label>
-                    <input className="style_input" type= "text" placeholder="Name"  onChange={(e)=>setDates(e.target.value)}/>
+                    <input className="style_input" type= "text"  name= "name"  value={dates.name} placeholder="Name"  onChange={handleChange}/>
                     <label htmlFor="title" className="label_modal">Email</label>
-                    <input className="style_input" type= "email" placeholder="Email" onChange={(e)=>setDates(e.target.value)} />
+                    <input className="style_input" type= "email"  name= "email"  value={dates.email}   placeholder="Email" onChange={handleChange} />
                     <label htmlFor="title" className="label_modal">Password</label>
-                    <input className="style_input" type= "password" placeholder="password" onChange={(e)=>setDates(e.target.value)}/>
+                    <input className="style_input" type= "password" name= "password"  value={dates.password} placeholder="password" onChange={handleChange}/>
                     <label htmlFor="title" className="label_modal">Confirm Password</label> 
-                    <input className="style_input" type="password" placeholder="Confirmar Contraseña" onChange={(e)=>setDates(e.target.value)} />
+                    <input className="style_input" type="password" name= "confirmPassword"  value={dates.confirmPassword}  placeholder="Confirmar Contraseña" onChange={handleChange} />
                     
                 </div>
 
                  <div className="btn">   
-                <button className="btn_register" onClick={()=> {getData()}}>Register</button>
+                <button className="btn_register" onClick={ handleSubmit}>Register</button>
                 </div>  
 
             </div>

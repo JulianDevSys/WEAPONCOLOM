@@ -1,10 +1,14 @@
 import Page from "./PagePrincipal/Page"
-
+import PageLoginSession from "./LoginSession/PageLoginSession";
+import { Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Page/>
+     <Routes>
+        <Route path="/" element={<Page />} />
+        <Route path="/LoginSession" element={<PageLoginSession />} />
+      </Routes>
     </>
   )
 }
