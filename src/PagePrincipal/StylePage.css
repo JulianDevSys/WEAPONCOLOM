@@ -1,5 +1,44 @@
 .prinicpal_container{
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     background-color: rgb(113, 161, 161);
+    gap: 10px;
 }
 
+.container_carrusel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+
+.carousel-inner{
+    box-sizing: border-box;  /* asegura que padding y bordes no sumen al tamaño del contenedor */
+    overflow:auto; 
+    flex-wrap: wrap;
+    display: flex;;
+    flex-direction: column;
+    width: 85%; 
+    height: 100%;
+    gap: 10px; 
+    padding: 10px;
+    border-style: groove;
+    border-color: aquamarine;
+}
+
+.carousel_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 85%;
+}
+
+.img_arms {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
