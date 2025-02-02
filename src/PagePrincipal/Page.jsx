@@ -1,45 +1,50 @@
 import { useState, useEffect, useRef} from "react";
 import Aos from "aos"
 import Header from "./Header"
+import getBestProducts from "../Hooks/getBestProducts";
 import "./StylePage.css"
+
 
 export default function Page(){
 
-  const [bestProducts,setBestProducts]=useState([])
   const[productos,setProductos]=useState([])
+  const[bestproductos,setBestProductos]=useState([])
   const [busqueda, setBusqueda]=useState("")
   const carruselRef=useRef(null)
-
-
-  const getBestProducts =  async() => {
-      const result = await fetch('http://localhost:8000/get/bestweapons')
-      if(result.ok){
-        const bests =  await result.json()
-        setBestProducts(bests)  
-      }
-    };
   
-  const intervale = ()=>{
-      setInterval(getBestProducts,10000)
+  useEffect(() => {
+    async function fetchBestProducts() {
+      const data = await getBestProducts(); // Llamada a la API
+      setBestProductos(data); // Establecer los mejores productos
     }
 
+    fetchBestProducts(); // Llamada inicial
+    const interval = setInterval(fetchBestProducts, 10000); // Actualiza cada 10 segundos
+    return () => clearInterval(interval); // Limpiar intervalo al desmontar el componente
+  }, []); 
+
+
+
     useEffect(() => {
+      let scrollDirection = 1; // 1 significa desplazarse hacia la derecha, -1 hacia la izquierda
       const scrollInterval = setInterval(() => {
           if (carruselRef.current) {
-              // Realiza el scroll horizontal automáticamente
-              carruselRef.current.scrollLeft += 1;
-              if (
-                carruselRef.current.scrollLeft + carruselRef.current.offsetWidth >=
-                carruselRef.current.scrollWidth
-              ) {
-                  // Reinicia el scroll al inicio si llega al final
-                  carruselRef.current.scrollLeft = 0;
+              // Desplazarse horizontalmente
+              carruselRef.current.scrollLeft += scrollDirection;
+  
+              // Condición para verificar si llegó al final o al inicio
+              if (carruselRef.current.scrollLeft + carruselRef.current.offsetWidth >= carruselRef.current.scrollWidth) {
+                  // Cambiar la dirección al llegar al final
+                  scrollDirection = -1;
+              } else if (carruselRef.current.scrollLeft <= 0) {
+                  // Cambiar la dirección al llegar al inicio
+                  scrollDirection = 1;
               }
           }
-      }, 30); // Velocidad de scroll
-      return () => clearInterval(scrollInterval); // Limpia el intervalo al desmontar
+      }, 30); // Velocidad de desplazamiento
+  
+      return () => clearInterval(scrollInterval); // Limpiar intervalo al desmontar
   }, []);
-
 
  
     useEffect(() => {
@@ -59,8 +64,7 @@ export default function Page(){
       if(productos.length==0){
         obtenerProductosCompletos(); // Llama a obtenerProductos() dentro de useEffect()
       }
-     getBestProducts();
-     intervale()
+    getBestProducts()
       // No es necesario agregar 'obtenerProductos' a la lista de dependencias ya que no tiene dependencias externas
     }, []);
     const handleBusquedaChange = (event) => {
@@ -89,12 +93,15 @@ export default function Page(){
       <h1>THE BEST WEAPONS</h1></div>
 
         <div className="carousel-inner" ref={carruselRef}>
-            {bestProducts.map((element, index)=>(
-              <div className="carousel_item " >
-                
-                <img  className="img_arms" key={index} src={element.url_image} alt="best_arms"></img>
-              </div>
-            ))}
+        {bestproductos && bestproductos.length > 0 ? (
+                        bestproductos.map((element, index) => (
+                            <div className="carousel_item" key={index}>
+                                <img className="img_arms" src={element.url_image} alt="best_arms" />
+                            </div>
+                        ))
+                    ) : (
+                        <p>Cargando armas...</p> 
+                    )}
 
           </div>
           </div>
