@@ -28,7 +28,10 @@ export default function PageLoginSession(){
                     weapons.map((element) => (
                         <div className="weapons_container">
                             <img className= "weapons" key={element.codigo} src={element.url_image} alt="weapons"  />
-                            <p className="price_weapons"> {element.precio}</p>
+
+                            <div className="info_weapons">
+                            <p className="price_weapons"> {element.precio}</p> 
+                            </div>
                             </div>
                     ))
                 ) : (
