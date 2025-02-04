@@ -2,8 +2,12 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: rgb(113, 161, 161);
+    background-color:rgba(0, 0, 0, 0.87);
     gap: 10px;
+}
+
+.title_page{
+    color: white;
 }
 
 .container_carrusel{
@@ -19,19 +23,17 @@
     flex-wrap: wrap;
     display: flex;;
     flex-direction: column;
-    width: 85%; 
+    width: 75%; 
     height: 100%;
     gap: 10px; 
     padding: 10px;
-    border-style: groove;
-    border-color: aquamarine;
 }
 
 .carousel_item {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 35%;
     height: 85%;
 }
 

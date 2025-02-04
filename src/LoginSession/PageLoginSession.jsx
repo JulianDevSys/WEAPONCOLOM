@@ -22,14 +22,13 @@ export default function PageLoginSession(){
     return(
         <div className="container_login">
             <div><HeaderLogin/></div>
-                <div>
-                    <h1>Armas</h1>
+                <div className="weapons_login">
 
                 {weapons?.length > 0 ? (  // Verificamos que haya datos antes de usar map
                     weapons.map((element) => (
-                        <div>
-                            <img key={element.codigo} src={element.url_image} alt="weapons"  />
-                            <p> {element.precio}</p>
+                        <div className="weapons_container">
+                            <img className= "weapons" key={element.codigo} src={element.url_image} alt="weapons"  />
+                            <p className="price_weapons"> {element.precio}</p>
                             </div>
                     ))
                 ) : (

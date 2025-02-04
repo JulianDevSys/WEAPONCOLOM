@@ -3,11 +3,10 @@
     height: 100%;
 }
 
-
 .header{
     display: flex;
     width: 100%;
-    background-color: gray;
+    background-color: rgba(255, 255, 255, 0.781);
 }
 
 .logo_page{
@@ -24,7 +23,6 @@
     border: none;
     animation: rotate 5s linear infinite; /* Nombre de la animación, duración, temporización, iteraciones */  
 }
-
 
 .title{
     display: flex;

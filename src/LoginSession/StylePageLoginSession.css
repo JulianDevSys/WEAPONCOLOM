@@ -1,0 +1,35 @@
+.weapons_login{
+    display: flex;
+    background-color: aqua;
+    box-sizing: border-box;  /* asegura que padding y bordes no sumen al tamaño del contenedor */
+    overflow:auto; 
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.weapons_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    padding: 10px;
+    width: 30%;
+    height: 20%;
+
+
+}
+
+.weapons{
+
+    width: 60%;
+    
+}
+
+.price_weapons{
+    display: flex;
+    width: 80%;
+    background-color: blue;
+}
