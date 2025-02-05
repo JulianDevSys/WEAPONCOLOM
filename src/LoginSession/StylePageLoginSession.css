@@ -1,6 +1,11 @@
+.container_login{
+ background-color: black;
+ height: 100vh;
+ overflow:auto; 
+}
+
 .weapons_login{
     display: flex;
-    background-color: black;
     box-sizing: border-box;  /* asegura que padding y bordes no sumen al tamaño del contenedor */
     overflow:auto; 
     flex-wrap: wrap;
@@ -22,13 +27,22 @@
 
 .weapons{
     display: flex;
-    width: 70%;
-    height: 80%;
+    width: 80%;
+    height: 75%;
+    border-radius: 10px;
+    filter: drop-shadow(5px 10px 10px);
 }
 
 .info_weapons{
     display: flex;
     justify-content: center;
-    width: 70%;
-    background-color: brown;
+    width: 80%;
+    background-color: rgb(66, 66, 66);
+    border-radius: 10px;
+    filter: drop-shadow(5px 10px 10px);
+}
+
+.price_weapons{
+    font-size: 80%;
+    font: bolder ;
 }

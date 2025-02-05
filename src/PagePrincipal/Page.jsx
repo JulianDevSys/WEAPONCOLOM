@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Aos from "aos"
 import Header from "./Header"
 import getBestProducts from "../Hooks/getBestProducts";
+import Footer from "./Footer";
 import "./StylePage.css"
 
 
@@ -101,7 +102,10 @@ export default function Page() {
         </div>
       </div>
 
+      <div>
 
+      </div>
+          <Footer/>
 
     </div>
   )
