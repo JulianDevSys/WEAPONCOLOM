@@ -1,49 +1,90 @@
-import { FaInstagram } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
-import { ImFacebook2 } from "react-icons/im";
+import { Box, Container, Typography, Button, Grid } from "@mui/material";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
-import "./StyleFooter.css"
+export default function Footer() {
+  return (
+    <Box
+      sx={{
+        backgroundColor: "red", // Fondo oscuro pero elegante
+        color: "white", // Texto blanco para resaltar
+        position: "absolute",
+        bottom: 0,
+        display: "flex",
+        width:"100%"
 
+      }}
+    >
+      <Container
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          alignItems: "center",
+          minWidth: "100%",
+          textAlign: "center",
+          backgroundColor:"gray"
+        }}
+      >
+        {/* Información de contacto */}
+        <Grid container spacing={4} justifyContent="center">
+          <Grid item xs={12} sm={4}>
+            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+              Servicio al cliente
+            </Typography>
+            <Typography variant="body1">Lunes a viernes 9:00am - 6:00pm</Typography>
+            <Typography variant="body1">Correo: escastr@gmail.com</Typography>
+            <Typography variant="body1">Tel: 317250283</Typography>
+          </Grid>
 
-export default function Footer(){
-    return(
-        <div className="container_footer">
+          {/* Redes sociales */}
+          <Grid item xs={12} sm={4}>
+            <Typography variant="h6" sx={{ fontWeight: "bold", mb: 2 }}>
+              Síguenos en Redes Sociales
+            </Typography>
+            <Box>
+              <Button
+                variant="text"
+                sx={{ color: "white", margin: "0 8px", fontSize: 30 }}
+                onClick={() =>
+                  window.location.href =
+                    "https://www.instagram.com/esteban_castro_henao?igsh=MXdmODd5c2tpNnd0cg=="
+                }
+              >
+                <InstagramIcon />
+              </Button>
 
-            <div className="information_footer">
+              <Button
+                variant="text"
+                sx={{ color: "white", margin: "0 8px", fontSize: 30 }}
+                onClick={() => window.location.href = "https://www.whatsapp.com"}
+              >
+                <WhatsAppIcon />
+              </Button>
 
-          <div className="other_container ">
-            <p className="edit_info_container">
-              servicio al cliente : Horario Lunes a viernes de 9:00am a 6:00pm
-            </p>
-            <hr className="edit_hr2" />
-            <p className="edit_info_container">informacion </p>
-            <hr className="edit_hr2" />
-            <p className="edit_info_container onemore">
-              {" "}
-              correo: escastr@gmail.com
-            </p>
-            <p className="edit_info_container onemore"> 317250283</p>
-          </div>
+              <Button
+                variant="text"
+                sx={{ color: "white", margin: "0 8px", fontSize: 30 }}
+                onClick={() =>
+                  window.location.href =
+                    "https://www.facebook.com/profile.php?id=100006573377077"
+                }
+              >
+                <FacebookIcon />
+              </Button>
+            </Box>
+          </Grid>
+        </Grid>
 
-                
-          <div className="btn_redes">
-            <FaInstagram className="buttons_redes" onClick={()=>{
-                window.location.href ="https://www.instagram.com/esteban_castro_henao?igsh=MXdmODd5c2tpNnd0cg=="}}/>
-
-            <FaWhatsapp className="buttons_redes" onClick={()=>{
-                window.location.href = "https://www.whatsapp.com"}}/>
-
-            <ImFacebook2 className="buttons_redes"onClick={()=>{
-                window.location.href ="https://www.facebook.com/profile.php?id=100006573377077";}}/>
-   
-   </div>
-
-
-
-        </div>
-
-
-            </div>
-
-    )
+        {/* Información adicional o derechos */}
+        <Typography
+          variant="body2"
+          sx={{ marginTop: 3, color: "gray", fontSize: "0.9rem" }}
+        >
+          © 2025 Esteban Castro. Todos los derechos reservados.
+        </Typography>
+      </Container>
+    </Box>
+  );
 }

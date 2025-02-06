@@ -1,20 +1,17 @@
-.container_footer{
-    background-color: rgba(255, 255, 255, 0.781);
-    height: 42%;
-}
-
-.information_footer{
+html, body, #root {
+    height: 100%;
+    margin: 0;
     display: flex;
-    justify-content: space-around;
-}
-
-.btn_redes{
+    flex-direction: column;
+  }
+  
+  #root {
     display: flex;
-    width: 20%;
-    gap: 10px;
-}
-
-.buttons_redes{
-    height: 30%;
-    width: 60%;
-}
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 2; /* Empuja el footer hacia abajo */
+  }
+  
