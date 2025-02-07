@@ -7,23 +7,13 @@ export default function Footer() {
   return (
     <Box
       sx={{
-        backgroundColor: "red", // Fondo oscuro pero elegante
-        color: "white", // Texto blanco para resaltar
-        position: "absolute",
-        bottom: 0,
-        display: "flex",
-        width:"100%"
-
+        backgroundColor: "red",
+        
       }}
     >
       <Container
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          alignItems: "center",
           minWidth: "100%",
-          textAlign: "center",
           backgroundColor:"gray"
         }}
       >
@@ -43,7 +33,7 @@ export default function Footer() {
             <Typography variant="h6" sx={{ fontWeight: "bold", mb: 2 }}>
               Síguenos en Redes Sociales
             </Typography>
-            <Box>
+            <Container>
               <Button
                 variant="text"
                 sx={{ color: "white", margin: "0 8px", fontSize: 30 }}
@@ -73,7 +63,7 @@ export default function Footer() {
               >
                 <FacebookIcon />
               </Button>
-            </Box>
+            </Container>
           </Grid>
         </Grid>
 

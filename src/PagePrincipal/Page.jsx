@@ -3,6 +3,7 @@ import Aos from "aos"
 import Header from "./Header"
 import getBestProducts from "../Hooks/getBestProducts";
 import Footer from "./Footer";
+import Menu from "./MenuDesplegable/Menu";
 import "./StylePage.css"
 
 
@@ -82,7 +83,11 @@ export default function Page() {
 
   return (
     <div className="prinicpal_container">
+
       <div><Header /></div>
+      <div>
+          <Menu/>
+        </div>
 
       <div className="container_carrusel">
 
@@ -102,10 +107,11 @@ export default function Page() {
         </div>
       </div>
 
-      <div>
-
+      <div >
+      <Footer/>
       </div>
-          <Footer/>
+     
+          
 
     </div>
   )
