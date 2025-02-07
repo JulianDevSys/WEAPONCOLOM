@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { TextField, Button, Box, Container, Typography, IconButton, Grid} from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import "./StyleRegister.css"
 
 export default function Register({ closeModal }){
@@ -54,39 +56,115 @@ export default function Register({ closeModal }){
 
 
     return(
-        <div className="container_register">
+        
+        <Box className="container_register" sx={{ 
+            display:"flex",
+            height:"100vh",
+            width:"100%",
+            position: "absolute",
+            backgroundColor: "rgba(192, 179, 179, 0.678)",
+            justifyContent: "center",
+            alignItems:"center",
+            boxSizing: "border-box",
 
-                <div className="input_register"> 
+        }}>
 
-                <div className="close">
-                <button className="close_register" onClick={closeModal}>X</button> 
-                </div>
 
-                <div className="img_avatar">
-                     <img  className= "img_register" 
-                     src="https://toppng.com/uploads/preview/file-svg-profile-icon-vector-11562942678pprjdh47a8.png" alt="avatar"  />
-                     </div>
+        <Container maxWidth="sm" sx={{
+           zIndex: "1",
+           backgroundColor:"white",
+           borderRadius:"10px",
+           padding:"15px"
 
-                    <div className="form">
-                    <label htmlFor="title" className="label_modal">Username</label>
-                    <input className="style_input" type= "text"  name= "name"  value={dates.name} placeholder="Name"  onChange={handleChange}/>
-                    <label htmlFor="title" className="label_modal">Email</label>
-                    <input className="style_input" type= "email"  name= "email"  value={dates.email}   placeholder="Email" onChange={handleChange} />
-                    <label htmlFor="title" className="label_modal">Password</label>
-                    <input className="style_input" type= "password" name= "password"  value={dates.password} placeholder="password" onChange={handleChange}/>
-                    <label htmlFor="title" className="label_modal">Confirm Password</label> 
-                    <input className="style_input" type="password" name= "confirmPassword"  value={dates.confirmPassword}  placeholder="Confirmar Contraseña" onChange={handleChange} />
-                    
-                </div>
-
-                 <div className="btn">   
-                <button className="btn_register" onClick={ handleSubmit}>Register</button>
-                </div>  
-
-            </div>
+        }} >
+          
+          <Box sx={{
+            display:"flex",
+            justifyContent:"flex-end",
+            width:"100%",
+          }}>
+          <IconButton className="close"
+            onClick={closeModal}>
+            <CloseIcon />
+          </IconButton>
             
+          </Box>
 
-        </div>
+  
+          {/* Avatar */}
+          <Box className="img_avatar">
+            <img
+              className="img_register"
+              src="https://toppng.com/uploads/preview/file-svg-profile-icon-vector-11562942678pprjdh47a8.png"
+              alt="avatar"
+            />
+          </Box>
+  
+        <Grid container>
+        <form onSubmit={handleSubmit} >
+            <TextField
+              label="Username"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              name="name"
+              value={dates.name}
+              onChange={handleChange}
+              sx={{ backgroundColor: 'white', borderRadius: 1 }}
+            />
+  
+            <TextField
+              label="Email"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              name="email"
+              value={dates.email}
+              onChange={handleChange}
+              type="email"
+              sx={{ backgroundColor: 'white', borderRadius: 1 }}
+            />
+  
+            <TextField
+              label="Password"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              name="password"
+              value={dates.password}
+              onChange={handleChange}
+              type="password"
+              sx={{ backgroundColor: 'white', borderRadius: 1 }}
+            />
+  
+            <TextField
+              label="Confirm Password"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              name="confirmPassword"
+              value={dates.confirmPassword}
+              onChange={handleChange}
+              type="password"
+              sx={{ backgroundColor: 'white', borderRadius: 1 }}
+            />
+  
+            <Box mt={2}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                fullWidth
+                sx={{ padding: '10px' }}
+              >
+                Register
+              </Button>
+            </Box>
+          </form>
+        </Grid>
+          
+        </Container>
+      </Box>
 
     )
 }
