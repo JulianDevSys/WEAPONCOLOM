@@ -11,7 +11,7 @@ export default function Menu () {
   };
 
   return (
-    <Box className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
+    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <Container maxWidth="sm">
         
       <Button  onClick={toggleSidebar}>
@@ -45,7 +45,7 @@ export default function Menu () {
 
       </Container>
 
-    </Box>
+    </div>
   );
 };
 

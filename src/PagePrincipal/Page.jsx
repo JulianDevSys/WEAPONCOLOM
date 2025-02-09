@@ -5,6 +5,8 @@ import getBestProducts from "../Hooks/getBestProducts";
 import Footer from "./Footer";
 import Menu from "./MenuDesplegable/Menu";
 import "./StylePage.css"
+import Container from '@mui/material/Container'
+import { Box, Grid2, Typography } from "@mui/material";
 
 
 export default function Page() {
@@ -84,34 +86,41 @@ export default function Page() {
   return (
     <div className="prinicpal_container">
 
-      <div><Header /></div>
-      <div>
-          <Menu/>
-        </div>
 
-      <div className="container_carrusel">
+      <Grid2>
 
-        <div>
-          <h1 className="title_page">THE BEST WEAPONS</h1></div>
-        <div className="carousel-inner" ref={carruselRef}>
+
+      <Box><Header /></Box>
+
+      <Box maxWidth="xs">
+      <Menu/>
+      </Box>
+  
+
+      <Container className="container_carrusel">
+      <Grid2>
+        <Box>
+          <Typography className="title_page">THE BEST WEAPONS</Typography></Box>
+        <Container className="carousel-inner" ref={carruselRef}>
           {bestproductos && bestproductos.length > 0 ? (
             bestproductos.map((element, index) => (
-              <div className="carousel_item" key={index}>
+              <Container className="carousel_item" key={index}>
                 <img className="img_arms" src={element.url_image} alt="best_arms" />
-              </div>
+              </Container>
             ))
           ) : (
             <p className="title_page">Cargando armas...</p>
           )}
 
-        </div>
-      </div>
+        </Container>
+        </Grid2>
+      </Container>
 
-      <div>
+      <Box>
           <Footer/>
-      </div>
+      </Box>
   
-
+      </Grid2>
     </div>
   )
 }

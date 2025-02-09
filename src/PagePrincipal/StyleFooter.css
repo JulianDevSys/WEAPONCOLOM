@@ -11,7 +11,9 @@ html, body, #root {
     min-height: 100vh;
   }
   
-  main {
-    flex: 2; /* Empuja el footer hacia abajo */
-  }
-  
+
+.principal_Footer{
+  position:absolute;
+  bottom:0;
+  width:100%,
+}

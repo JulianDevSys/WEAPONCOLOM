@@ -5,12 +5,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export default function Footer() {
   return (
-    <Box
-      sx={{
-        backgroundColor: "red",
-        
-      }}
-    >
+    <div className="principal_Footer" >
       <Container
         sx={{
           minWidth: "100%",
@@ -75,6 +70,6 @@ export default function Footer() {
           © 2025 Esteban Castro. Todos los derechos reservados.
         </Typography>
       </Container>
-    </Box>
+    </div>
   );
 }
