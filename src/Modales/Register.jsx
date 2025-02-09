@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { TextField, Button, Box, Container, Typography, IconButton, Grid} from '@mui/material';
+import { TextField, Button, Box, Container, Typography, IconButton, Grid, Grid2} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import "./StyleRegister.css"
 
@@ -66,10 +66,11 @@ export default function Register({ closeModal }){
             justifyContent: "center",
             alignItems:"center",
             boxSizing: "border-box",
+            zIndex:"1",
 
         }}>
 
-
+        <Grid2>
         <Container maxWidth="sm" sx={{
            zIndex: "1",
            backgroundColor:"white",
@@ -164,6 +165,7 @@ export default function Register({ closeModal }){
         </Grid>
           
         </Container>
+        </Grid2>
       </Box>
 
     )

@@ -4,11 +4,12 @@
     color: #fff;
     width: 250px;
     height: 90%; /* Ocupa toda la altura de la pantalla */
-    position: fixed; /* Fijado al lado izquierdo */
-    top: 10;
-    left: 0;
+    position: absolute; /* Fijado al lado izquierdo */
+
+    left: 10;
     transition: width 0.3s ease;
     overflow: hidden;
+    border-radius: 10px;
   }
   
   .sidebar.collapsed {

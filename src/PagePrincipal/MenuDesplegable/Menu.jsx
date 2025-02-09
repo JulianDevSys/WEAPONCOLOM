@@ -1,42 +1,51 @@
 import React, { useState } from "react";
 import "./StyleMenu.css";
+import { Box, Container,Button,List,ListItem,ListItemText} from "@mui/material";
+import ContactMailIcon from "@mui/icons-material/ContactMail"
 
 export default function Menu () {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
   };
 
   return (
-    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
-      <button className="toggle-btn" onClick={toggleSidebar}>
+    <Box className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
+      <Container maxWidth="sm">
+        
+      <Button  onClick={toggleSidebar}>
         ☰
-      </button>
-      <ul>
-        <li>
-          <i></i> <span>Dashboard</span>
-        </li>
-        <li>
-          <i>📊</i> <span>Market Overview</span>
-        </li>
-        <li>
-          <i>📈</i> <span>Analytics</span>
-        </li>
-        <li>
-          <i>📄</i> <span>Reports</span>
-        </li>
-        <li>
-          <i>🏭</i> <span>Industries</span>
-        </li>
-        <li>
-          <i>⚙️</i> <span>Settings</span>
-        </li>
-        <li>
-          <i>🔔</i> <span>Notifications</span>
-        </li>
-      </ul>
-    </div>
+        </Button>
+        <List>
+        <ListItem>
+          <ListItemText> Dashboard</ListItemText >
+        </ListItem>
+
+        <ListItem>
+        <ListItemText>PISTOLA</ListItemText >
+        </ListItem>
+
+        <ListItem>
+          <ListItemText>FUSIL</ListItemText >
+        </ListItem>
+
+        <ListItem>
+          <ListItemText>ametralladoras</ListItemText >
+        </ListItem>
+
+        <ListItem>
+          <ListItemText>Granadas</ListItemText >
+        </ListItem>
+
+        <ListItem>
+          <i><ContactMailIcon/></i> <ListItemText>Contactanos</ListItemText >
+          </ListItem>
+      </List>
+
+      </Container>
+
+    </Box>
   );
 };
 

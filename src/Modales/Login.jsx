@@ -1,6 +1,9 @@
 import { useState } from "react"
 import "./StyleLogin.css"
 import { useNavigate } from "react-router"
+import {Container, Box } from '@mui/material'
+import { Grid2 } from "@mui/material"
+
 
 
 
@@ -36,15 +39,34 @@ export default function Login({closeModal}){
  
 
     return(
-        <div className="container_register">
-
-            <div className="input_register"> 
+        <Box className="container_register" sx={{
+            display:"flex",
+            height:"100vh",
+            width:"100%",
+            position: "absolute",
+            backgroundColor: "rgba(192, 179, 179, 0.678)",
+            justifyContent: "center",
+            alignItems:"center",
+            boxSizing: "border-box",
+            zIndex: "1",
+        }}>
+    <Grid2>
+            <Container maxWidth="md" sx={{
+                zIndex: "1",
+                backgroundColor:"white",
+                borderRadius:"10px",
+                padding:"15px"
+     
+            }}> 
 
                 <div className="close">
                 <button className="close_register" onClick={closeModal}>X</button> 
                 </div>
 
-            <div className="login">
+              
+            <Container className="login">
+
+               
 
             <div className="img_login">
             <img className="img_log" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYV7teAdHYe9eHib7ZW-VA_3XiGIA3B3OqwQ&s" alt="imagen" />
@@ -60,12 +82,15 @@ export default function Login({closeModal}){
             </div>
 
         </div>
-            
-    </div>
+        
+     
+    </Container>
+    
 
            
-            </div>
+            </Container>
+            </Grid2>
 
-        </div>
+        </Box>
     )
 }
