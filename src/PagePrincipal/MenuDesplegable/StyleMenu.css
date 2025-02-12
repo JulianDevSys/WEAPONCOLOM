@@ -5,22 +5,26 @@
     width: 250px;
     height: 89%; /* Ocupa toda la altura de la pantalla */
     position: absolute; /* Fijado al lado izquierdo */
-
     left: 10;
     transition: width 0.3s ease;
     overflow: hidden;
     border-radius: 10px;
+    z-index: 5;
+    box-sizing: border-box;
   }
   
   .sidebar.collapsed {
-    width: 60px; /* Ancho reducido cuando está colapsado */
+    width: 40px; /* Ancho reducido cuando está colapsado */
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    
   }
   
   /* Toggle Button */
   .toggle-btn {
     position: absolute;
     top: 20px;
-    right: -15px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -28,23 +32,22 @@
     width: 30px;
     height: 30px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+
     cursor: pointer;
   }
   
   /* Sidebar Links */
   .sidebar ul {
-    list-style: none;
+
     padding: 0;
-    margin: 0;
+ 
   }
   
   .sidebar li {
     padding: 15px;
     cursor: pointer;
     display: flex;
-    align-items: center;
+    justify-content: flex-start;
   }
   
   .sidebar li:hover {
@@ -53,7 +56,7 @@
   
   /* Icons and Text */
   .sidebar li i {
-    margin-right: 15px;
+
     font-size: 18px;
   }
   

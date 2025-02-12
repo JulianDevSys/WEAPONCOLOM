@@ -85,42 +85,38 @@ export default function Page() {
 
   return (
     <div className="prinicpal_container">
+      <div><Header /></div>
 
-
-      <Grid2>
-
-
-      <Box><Header /></Box>
-
-      <Box maxWidth="xs">
-      <Menu/>
-      </Box>
+      <div maxWidth="xs"><Menu/></div>
   
+  
+      <div className="container_carrusel">
+      
+        <div className="titles">
+          <p className="title_page" >THE BEST WEAPONS</p></div>
 
-      <Container className="container_carrusel">
-      <Grid2>
-        <Box>
-          <Typography className="title_page">THE BEST WEAPONS</Typography></Box>
-        <Container className="carousel-inner" ref={carruselRef}>
+        <div className="carousel-inner" ref={carruselRef}>
           {bestproductos && bestproductos.length > 0 ? (
             bestproductos.map((element, index) => (
-              <Container className="carousel_item" key={index}>
+              <div className="carousel_item" key={index}>
                 <img className="img_arms" src={element.url_image} alt="best_arms" />
-              </Container>
+              </div>
             ))
           ) : (
             <p className="title_page">Cargando armas...</p>
           )}
 
-        </Container>
-        </Grid2>
-      </Container>
+        </div>
+        
+      </div>
 
-      <Box>
-          <Footer/>
-      </Box>
+
+
+      <div>
+        
+      </div>
+      <Footer/>
+      </div>
   
-      </Grid2>
-    </div>
   )
 }

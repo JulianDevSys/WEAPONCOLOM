@@ -3,11 +3,21 @@
     flex-direction: column;
     height: 100%;
     background-color:rgba(0, 0, 0, 0.87);
-    gap: 10px;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.titles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
 }
 
 .title_page{
     color: white;
+    font-size: 30px;
 }
 
 .container_carrusel{
@@ -24,7 +34,7 @@
     display: flex;;
     flex-direction: column;
     width: 75%; 
-    height: 100%;
+    height: 70%;
     gap: 10px; 
     padding: 10px;
 
@@ -60,3 +70,4 @@
     background-color: aqua;
     height: 100%;
 }
+

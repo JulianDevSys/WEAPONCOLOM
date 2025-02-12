@@ -1,11 +1,11 @@
-import { Box, Container, Typography, Button, Grid } from "@mui/material";
+import { Box, Container, Typography, Button, Grid, Grid2 } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export default function Footer() {
   return (
-    <div className="principal_Footer" >
+    <Box className="principal_Footer" >
       <Container
         sx={{
           minWidth: "100%",
@@ -13,18 +13,18 @@ export default function Footer() {
         }}
       >
         {/* Información de contacto */}
-        <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12} sm={4}>
+        <Grid2 container spacing={4} justifyContent="center">
+          <Grid2 item xs={12} sm={4}>
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               Servicio al cliente
             </Typography>
             <Typography variant="body1">Lunes a viernes 9:00am - 6:00pm</Typography>
             <Typography variant="body1">Correo: escastr@gmail.com</Typography>
             <Typography variant="body1">Tel: 317250283</Typography>
-          </Grid>
+          </Grid2>
 
           {/* Redes sociales */}
-          <Grid item xs={12} sm={4}>
+          <Grid2 item xs={12} sm={4}>
             <Typography variant="h6" sx={{ fontWeight: "bold", mb: 2 }}>
               Síguenos en Redes Sociales
             </Typography>
@@ -59,8 +59,8 @@ export default function Footer() {
                 <FacebookIcon />
               </Button>
             </Container>
-          </Grid>
-        </Grid>
+          </Grid2>
+        </Grid2>
 
         {/* Información adicional o derechos */}
         <Typography
@@ -70,6 +70,6 @@ export default function Footer() {
           © 2025 Esteban Castro. Todos los derechos reservados.
         </Typography>
       </Container>
-    </div>
+    </Box>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./StyleMenu.css";
 import { Box, Container,Button,List,ListItem,ListItemText} from "@mui/material";
 import ContactMailIcon from "@mui/icons-material/ContactMail"
+import MenuIcon from "@mui/icons-material/Menu"
 
 export default function Menu () {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -12,16 +13,12 @@ export default function Menu () {
 
   return (
     <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
+      
       <Container maxWidth="sm">
         
-      <Button  onClick={toggleSidebar}>
-        ☰
-        </Button>
-        <List>
-        <ListItem>
-          <ListItemText> Dashboard</ListItemText >
-        </ListItem>
+      <i onClick={toggleSidebar}><MenuIcon/></i>
 
+        <List>
         <ListItem>
         <ListItemText>PISTOLA</ListItemText >
         </ListItem>
