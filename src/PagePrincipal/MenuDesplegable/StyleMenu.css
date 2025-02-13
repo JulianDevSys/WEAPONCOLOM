@@ -1,4 +1,11 @@
-/* Sidebar Styles */
+.sidebar.collapsed {
+  width: 40px; /* Ancho reducido cuando está colapsado */
+  height: 20px;
+  display: flex;
+  background-color:rgba(0, 0, 0, 0.87);
+}
+
+
 .sidebar {
     background-color: #111;
     color: #fff;
@@ -9,17 +16,18 @@
     transition: width 0.3s ease;
     overflow: hidden;
     border-radius: 10px;
-    z-index: 5;
+    z-index: 3;
     box-sizing: border-box;
+
   }
-  
-  .sidebar.collapsed {
-    width: 40px; /* Ancho reducido cuando está colapsado */
-    height: 20px;
+
+  .menu{
     display: flex;
     justify-content: center;
-    
   }
+  
+  
+
   
   /* Toggle Button */
   .toggle-btn {

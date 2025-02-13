@@ -16,7 +16,7 @@ export default function Menu () {
       
       <Container maxWidth="sm">
         
-      <i onClick={toggleSidebar}><MenuIcon/></i>
+      <i className="menu" onClick={toggleSidebar} ><MenuIcon/></i>
 
         <List>
         <ListItem>

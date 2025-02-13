@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { TextField, Button, Box, Container, Typography, IconButton, Grid, Grid2} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { LoadingButton } from "@mui/lab";
 import "./StyleRegister.css"
 
 export default function Register({ closeModal }){
@@ -11,6 +12,20 @@ export default function Register({ closeModal }){
         password: '',
         confirmPassword: ''
     })
+
+
+    const [loading, setLoading] = useState(false);
+
+    const handleClick = () => {
+      setLoading(true);
+      setTimeout(() => {
+        alert("registrado con exito")
+        setLoading(false);
+      }, 2000); 
+
+      
+    };
+
 
     const handleChange =(e)=>{
         const {name,value}=e.target
@@ -66,7 +81,7 @@ export default function Register({ closeModal }){
             justifyContent: "center",
             alignItems:"center",
             boxSizing: "border-box",
-            zIndex:"1",
+            zIndex:"6",
 
         }}>
 
@@ -75,7 +90,10 @@ export default function Register({ closeModal }){
            zIndex: "1",
            backgroundColor:"white",
            borderRadius:"10px",
-           padding:"15px"
+           padding:"15px",
+            borderRadius:"10px",
+            borderStyle: "groove",
+            boxShadow: "15px 20px 50px"
 
         }} >
           
@@ -93,7 +111,10 @@ export default function Register({ closeModal }){
 
   
           {/* Avatar */}
-          <Box className="img_avatar">
+          <Box className="img_avatar" sx={{
+            width:"100%",
+            
+          }}>
             <img
               className="img_register"
               src="https://toppng.com/uploads/preview/file-svg-profile-icon-vector-11562942678pprjdh47a8.png"
@@ -101,7 +122,7 @@ export default function Register({ closeModal }){
             />
           </Box>
   
-        <Grid container>
+        <Grid2 container>
         <form onSubmit={handleSubmit} >
             <TextField
               label="Username"
@@ -150,19 +171,26 @@ export default function Register({ closeModal }){
               sx={{ backgroundColor: 'white', borderRadius: 1 }}
             />
   
-            <Box mt={2}>
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                fullWidth
-                sx={{ padding: '10px' }}
-              >
-                Register
-              </Button>
+            <Box mt={2} sx={{
+                  display:"flex",
+                  justifyContent:"center",
+                  alignItems:"center"
+            }}>
+            
+            <LoadingButton
+        onClick={handleClick}
+        loading={loading}
+        variant="contained"
+        color="primary"
+      sx={{
+        backgroundColor:"red",
+
+}}>
+        Register
+      </LoadingButton>
             </Box>
           </form>
-        </Grid>
+        </Grid2>
           
         </Container>
         </Grid2>

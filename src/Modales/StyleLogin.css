@@ -5,6 +5,7 @@
     height: 100%;
     gap: 10px;
     padding: 10px;
+    z-index: 5;
 }
 
 .img_login{

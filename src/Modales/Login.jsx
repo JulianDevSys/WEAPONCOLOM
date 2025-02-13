@@ -48,7 +48,7 @@ export default function Login({closeModal}){
             justifyContent: "center",
             alignItems:"center",
             boxSizing: "border-box",
-            zIndex: "1",
+            zIndex: "5",
         }}>
     <Grid2>
             <Container maxWidth="md" sx={{
